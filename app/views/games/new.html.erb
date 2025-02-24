@@ -1,0 +1,14 @@
+<h1>NEW GAME</h1>
+<div id="container">
+        <% @letters.each do |letter| %>
+            <span class="lettre"><strong><%= letter %></strong></span>
+        <% end %>
+        <p class="marge-autour">"What is the longest word you can find?"</p>
+        <form class="marge-autour" action="/score" method= "Post" data-turbo="false">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <input type="text" name="input">
+          <input type="submit" class="play-btn" value="Play!">
+        </form>
+</div>
+
+word
